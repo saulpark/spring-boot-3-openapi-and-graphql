@@ -1,0 +1,16 @@
+type Client {
+    id: ID!
+    name: String
+    lastName: String
+    email: String
+    items: [Item]
+    createAt: String
+}
+
+input ClientInput {
+    name: String
+    lastName: String
+    email: String
+    createAt: String
+    items: [ItemInput]
+}

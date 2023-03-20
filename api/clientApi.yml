@@ -1,0 +1,134 @@
+openapi: "3.0.3"
+info:
+  title: client-api
+  version: 1.0.0
+paths:
+  /clients:
+    get:
+      description: Get All Clients
+      operationId: getAllClients
+      responses:
+        '200':
+          description: All Clients are returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfClient'
+        '404':
+          description: No Clients returned
+          content:
+            application/json:
+              schema:
+                type: object
+
+        '500':
+          description: test
+          content:
+            application/json:
+              schema:
+                type: object
+
+
+    post:
+      description: Add A Client
+      operationId: addClient
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+      responses:
+        '201':
+          description: Client added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '400':
+          description: Bad Request
+
+  /client/{id}:
+    get:
+      description: Get A Client By ID
+      operationId: getClientById
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Get a Client by id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '404':
+          description: No Client returned
+
+    put:
+      description: Update A Client
+      operationId: updateClient
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+      responses:
+        '200':
+          description: Updated Client is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '400':
+          description: Bad Request
+        '404':
+          description: Client Does not Exist
+
+    delete:
+      description: Delete A Client
+      operationId: deleteClient
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Client deleted
+        '400':
+          description: Bad Request
+        '404':
+          description: Client Does not Exist
+
+components:
+  schemas:
+    ListOfClient:
+      type: array
+      items:
+        $ref: '#/components/schemas/Client'
+
+    Client:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          nullable: false
+        lastName:
+          type: string
+          default: ''
+          nullable: false
+        email:
+          type: string
+          nullable: false
