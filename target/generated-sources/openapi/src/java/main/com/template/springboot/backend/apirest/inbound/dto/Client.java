@@ -17,7 +17,7 @@ import jakarta.annotation.Generated;
  * Client
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-20T20:17:25.792729+01:00[Europe/Madrid]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-26T20:57:27.424315+02:00[Europe/Madrid]")
 public class Client {
 
   @JsonProperty("id")
