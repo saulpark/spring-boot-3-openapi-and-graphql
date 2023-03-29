@@ -110,6 +110,22 @@ paths:
         '404':
           description: Client Does not Exist
 
+  /retry-only:
+    get:
+      description: test retry only methods
+      operationId: retryOnly
+      responses:
+        '500':
+          description: return Exception
+
+  /retry-with-recover:
+    get:
+      description: test retry with recover
+      operationId: retryRecover
+      responses:
+        '200':
+          description: return 200 after recover
+
 components:
   schemas:
     ListOfClient:

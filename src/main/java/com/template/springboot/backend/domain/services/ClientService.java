@@ -6,6 +6,9 @@ import com.template.springboot.backend.domain.exeption.ClientSaveException;
 import com.template.springboot.backend.domain.model.ClientDto;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.apache.logging.log4j.util.Strings;
+import org.springframework.http.ResponseEntity;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,4 +57,11 @@ public class ClientService {
 		}
 	}
 
+    public void retryOnlyMethod() {
+		clientPort.testRetry();
+	}
+
+	public void retryWithRecoverMethod() {
+		clientPort.testRetryAndRecover("test message");
+	}
 }

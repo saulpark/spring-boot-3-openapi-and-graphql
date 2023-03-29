@@ -2,6 +2,7 @@ com/template/springboot/backend/inbound/client/grpc/ClientResponseOrBuilder.clas
 com/template/springboot/backend/inbound/client/graphql/ClientQlMapper.class
 com/template/springboot/backend/domain/exeption/ClientSaveException.class
 com/template/springboot/backend/outbound/client/ClientInput.class
+com/template/springboot/backend/inbound/client/websockets/ClientWebsocketController.class
 com/template/springboot/backend/inbound/item/ItemInputMapper.class
 com/template/springboot/backend/inbound/client/graphql/ClientQlController.class
 com/template/springboot/backend/inbound/exception/ExceptionResponse$ExceptionResponseBuilder.class
@@ -27,6 +28,7 @@ com/template/springboot/backend/inbound/client/grpc/ClientResponse.class
 com/template/springboot/backend/domain/model/ClientDto$ClientDtoBuilder.class
 com/template/springboot/backend/outbound/item/ItemEntity.class
 com/template/springboot/backend/domain/exeption/ClientNotFoundException.class
+com/template/springboot/backend/inbound/config/WebSocketConfig.class
 com/template/springboot/backend/inbound/exception/ExceptionResponse.class
 com/template/springboot/backend/inbound/client/grpc/ClientResponse$Builder.class
 com/template/springboot/backend/inbound/client/grpc/ClientRequestOrBuilder.class
@@ -43,10 +45,12 @@ com/template/springboot/backend/inbound/client/grpc/ClientServiceOuterClass.clas
 com/template/springboot/backend/inbound/client/grpc/ClientServiceGrpc$ClientServiceBaseDescriptorSupplier.class
 com/template/springboot/backend/apirest/inbound/api/ClientApi.class
 com/template/springboot/backend/outbound/client/ClientAdapterMapper.class
+com/template/springboot/backend/apirest/inbound/api/RetryWithRecoverApi.class
 com/template/springboot/backend/outbound/client/ClientAdapter.class
 com/template/springboot/backend/inbound/client/rest/ClientMapper.class
 com/template/springboot/backend/inbound/client/rest/ClientRestController.class
 com/template/springboot/backend/inbound/client/grpc/ClientServiceGrpc$ClientServiceBlockingStub.class
+com/template/springboot/backend/apirest/inbound/api/RetryOnlyApi.class
 com/template/springboot/backend/inbound/client/grpc/ClientServiceGrpc.class
 com/template/springboot/backend/inbound/client/grpc/ClientServiceGrpc$ClientServiceStub.class
 com/template/springboot/backend/inbound/client/grpc/ClientRequest$Builder.class

@@ -2,6 +2,8 @@ package com.template.springboot.backend.inbound.client.rest;
 
 import com.template.springboot.backend.apirest.inbound.api.ClientApi;
 import com.template.springboot.backend.apirest.inbound.api.ClientsApi;
+import com.template.springboot.backend.apirest.inbound.api.RetryOnlyApi;
+import com.template.springboot.backend.apirest.inbound.api.RetryWithRecoverApi;
 import com.template.springboot.backend.apirest.inbound.dto.Client;
 import com.template.springboot.backend.domain.services.ClientService;
 
@@ -14,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class ClientRestController implements ClientApi, ClientsApi {
+public class ClientRestController implements ClientApi, ClientsApi, RetryOnlyApi, RetryWithRecoverApi {
 
 	private final ClientService clientService;
 	private final ClientMapper clientMapper;
@@ -51,5 +53,17 @@ public class ClientRestController implements ClientApi, ClientsApi {
 				.map(clientMapper::clientDtoToClient)
 				.toList();
 		return ResponseEntity.ok(clients);
+	}
+
+	@Override
+	public ResponseEntity<Void> retryOnly() {
+		clientService.retryOnlyMethod();
+		return ResponseEntity.ok().build();
+	}
+
+	@Override
+	public ResponseEntity<Void> retryRecover() {
+		clientService.retryWithRecoverMethod();
+		return ResponseEntity.ok().build();
 	}
 }
