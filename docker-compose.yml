@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"   # REST / GraphQL / WebSocket / H2 console / Swagger UI
+      - "9090:9090"   # gRPC
+    environment:
+      - SPRING_PROFILES_ACTIVE=default

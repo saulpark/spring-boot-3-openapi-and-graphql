@@ -1,2 +1,9 @@
-# Intelij files:
-.idea/*
+# IntelliJ
+.idea/
+*.iml
+
+# Maven build output
+target/
+
+# VS Code
+.vscode/
