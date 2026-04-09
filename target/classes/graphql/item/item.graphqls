@@ -1,8 +1,0 @@
-input ItemInput {
-    itemName: String
-}
-
-type Item {
-    id: ID!
-    itemName: String
-}
